@@ -42,7 +42,8 @@ export const UserProvider = ({ children }) => {
     //The dispatch funtion extracted from the previous statement goes in the setCurrentUser function:
     const setCurrentUser = (user) => {
         dispatch(createAction(USER_ACTION_TYPES.SET_CURRENT_USER, user));
-    }
+    };
+    
     const value = { currentUser, setCurrentUser};
     
     useEffect(()=>{
