@@ -72,7 +72,7 @@ export const signInWithAccount = async (email, password) => {
   return signInUser;
 }
 
-export const crearUserDocumentFromAuth = async (userAuth, additionalInformation) => {
+export const createUserDocumentFromAuth = async (userAuth, additionalInformation) => {
   if(!userAuth) return;
   const userDocRef =  doc(db, 'users', userAuth.uid);
 

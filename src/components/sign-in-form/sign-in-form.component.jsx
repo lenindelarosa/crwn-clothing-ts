@@ -3,7 +3,7 @@ import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 import { 
     signInWithAccount, 
     signInWithGooglePopup, 
-    crearUserDocumentFromAuth 
+    createUserDocumentFromAuth 
 } from "../../utils/firebase/firebase.utils";
 import FormInput from "../form-input/form-input.component";
 import { SignInContainer, ButtonsContainer } from './sign-in-form.styles.jsx'
@@ -47,7 +47,7 @@ const SignInForm = () => {
 
     const signInWithGoogle = async () => {
         const { user } = await signInWithGooglePopup();
-        await crearUserDocumentFromAuth(user);
+        await createUserDocumentFromAuth(user);
     };
 
     return (
