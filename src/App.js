@@ -10,7 +10,7 @@ import Checkout from './routes/checkout/checkout.component';
 import { setCurrentUser } from './store/user/user.action';
 import {
   onAuthStateChangedListener,
-  createUserDocumentFromAuth,
+  createUserDocumentFromAuth
 } from './utils/firebase/firebase.utils';
 
 const App = () => {
@@ -21,7 +21,6 @@ const App = () => {
       if (user) {
         createUserDocumentFromAuth(user);
       }
-
       dispatch(setCurrentUser(user));
     });
 
