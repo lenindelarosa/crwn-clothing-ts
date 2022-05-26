@@ -17,6 +17,11 @@ export const selectCategoriesMap = createSelector(
             }, {})
 );
 
+export const selectCategoriesIsLoading = createSelector(
+    [selectCategoryReducer],
+    (categoriesSlice) => categoriesSlice.isLoading
+);
+
 // the library reselect is used to create selectors that use memoization, which means that if a selector's
 // information is in memory and the reducer it listends has not changed, the selector returns the latest value 
 //without the need of going through the selector once again. 
