@@ -1,8 +1,8 @@
 import { createAction } from "../../utils/reducer.utils";
 import { CART_ACTION_TYPES } from "./cart.types";
 
-export const setIsCartOpen = (bool) => 
-    createAction(CART_ACTION_TYPES.TOOGLE_CART_OPEN, bool);
+export const setIsCartOpen = (boolean) => 
+    createAction(CART_ACTION_TYPES.TOOGLE_CART_OPEN, boolean);
 
 // const updateCartItemsReducer = (newCartItems) => {
 //     const newCartTotal = newCartItems.reduce((accTotal, cartItem) => accTotal + (cartItem.quantity * cartItem.price), 0);
