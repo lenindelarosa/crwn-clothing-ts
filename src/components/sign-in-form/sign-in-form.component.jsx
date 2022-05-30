@@ -1,13 +1,14 @@
 import { useState } from "react";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 import { 
-    signInWithAccount, 
     signInWithGooglePopup, 
     createUserDocumentFromAuth 
 } from "../../utils/firebase/firebase.utils";
 import FormInput from "../form-input/form-input.component";
 import { SignInContainer, ButtonsContainer } from './sign-in-form.styles.jsx'
-import { useNavigate } from 'react-router-dom'
+//import { useNavigate } from 'react-router-dom'
+import { emailSignInStart } from "../../store/user/user.action";
+import { useDispatch } from 'react-redux';
 
 const defaultFormFields = {
     email: '',
@@ -19,25 +20,22 @@ const SignInForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { email, password } = formFields;
 
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-    // const resetFormFields = () => {
-    //     setFormFields(defaultFormFields);
-    // };
-
-    const submitHandler = async(event) => {
+    const submitHandler = async (event) => {
         event.preventDefault();
         try {
-            await signInWithAccount(email, password);
-            navigate('/shop');
-        }
-        catch(error){
+            console.log('Starting try.');
+            dispatch(emailSignInStart(email, password));
+        } catch (error){
             if(error.code === 'auth/wrong-password'){
                 alert('Invalid username and password combination. ');
             } else {
                 console.log(error)
             }
         }
+        //navigate('/shop');
     };
 
     const onChangeHandler = (event) => {
