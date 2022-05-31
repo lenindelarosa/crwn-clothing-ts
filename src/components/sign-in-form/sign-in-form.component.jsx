@@ -1,14 +1,11 @@
 import { useState } from "react";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
-import { 
-    signInWithGooglePopup, 
-    createUserDocumentFromAuth 
-} from "../../utils/firebase/firebase.utils";
 import FormInput from "../form-input/form-input.component";
 import { SignInContainer, ButtonsContainer } from './sign-in-form.styles.jsx'
 //import { useNavigate } from 'react-router-dom'
-import { emailSignInStart } from "../../store/user/user.action";
+import { emailSignInStart, googleSignInStart } from "../../store/user/user.action";
 import { useDispatch } from 'react-redux';
+//import { getCurrentUser } from "../../utils/firebase/firebase.utils";
 
 const defaultFormFields = {
     email: '',
@@ -17,25 +14,24 @@ const defaultFormFields = {
 
 const SignInForm = () => {
 
+    const dispatch = useDispatch();
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { email, password } = formFields;
 
     //const navigate = useNavigate();
-    const dispatch = useDispatch();
-
+    
     const submitHandler = async (event) => {
-        event.preventDefault();
+    event.preventDefault();
         try {
-            console.log('Starting try.');
             dispatch(emailSignInStart(email, password));
-        } catch (error){
-            if(error.code === 'auth/wrong-password'){
-                alert('Invalid username and password combination. ');
-            } else {
-                console.log(error)
-            }
+            // const currentUser = await getCurrentUser();
+            // console.log(currentUser);
+            // if (currentUser){
+            //     navigate('/shop');
+            // }
+        } catch (error) {
+            console.log('user sign in failed', error);
         }
-        //navigate('/shop');
     };
 
     const onChangeHandler = (event) => {
@@ -44,9 +40,12 @@ const SignInForm = () => {
     };
 
     const signInWithGoogle = async () => {
-        const { user } = await signInWithGooglePopup();
-        await createUserDocumentFromAuth(user);
-    };
+        dispatch(googleSignInStart());
+        // const currentUser = getCurrentUser();
+        // if (currentUser){
+        //     navigate('/shop');
+        // }
+      };
 
     return (
         <SignInContainer>
