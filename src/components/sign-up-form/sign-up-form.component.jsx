@@ -30,6 +30,7 @@ const SignUpForm = () => {
         }
         try {
             dispatch(signUpStart(email, password, displayName));
+            resetFormFields();
         }
         catch(error){
             console.log('Error in signing up user.');
