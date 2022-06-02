@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 import FormInput from "../form-input/form-input.component";
 import { SignInContainer, ButtonsContainer } from './sign-in-form.styles.jsx'
-//import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { emailSignInStart, googleSignInStart } from "../../store/user/user.action";
-import { useDispatch } from 'react-redux';
-//import { getCurrentUser } from "../../utils/firebase/firebase.utils";
+import { useDispatch, useSelector } from 'react-redux';
+import { selectCurrentUser } from "../../store/user/user.selector";
 
 const defaultFormFields = {
     email: '',
@@ -17,18 +17,19 @@ const SignInForm = () => {
     const dispatch = useDispatch();
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { email, password } = formFields;
+    const navigate = useNavigate();
+    const currentUser = useSelector(selectCurrentUser);
 
-    //const navigate = useNavigate();
+    useEffect(() => {
+        if(currentUser){
+            navigate('/shop');
+        }
+      }, [currentUser, navigate]);
     
     const submitHandler = async (event) => {
     event.preventDefault();
         try {
             dispatch(emailSignInStart(email, password));
-            // const currentUser = await getCurrentUser();
-            // console.log(currentUser);
-            // if (currentUser){
-            //     navigate('/shop');
-            // }
         } catch (error) {
             console.log('user sign in failed', error);
         }
@@ -41,10 +42,6 @@ const SignInForm = () => {
 
     const signInWithGoogle = async () => {
         dispatch(googleSignInStart());
-        // const currentUser = getCurrentUser();
-        // if (currentUser){
-        //     navigate('/shop');
-        // }
       };
 
     return (
