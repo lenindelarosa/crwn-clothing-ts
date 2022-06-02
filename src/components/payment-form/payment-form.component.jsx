@@ -1,16 +1,21 @@
 import { useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { selectCartTotal } from "../../store/cart/cart.selector";
 import FormInput from "../form-input/form-input.component";
 
 import { BUTTON_TYPE_CLASSES } from "../button/button.component";
+import { clearCartItems } from "../../store/cart/cart.action";
+import { useDispatch } from "react-redux";
 
 import { PaymentFormContainer, FormContainer, PaymentButton } from './payment-form.styles'
 
 const PaymentForm = () => {
     const stripe = useStripe();
     const elements = useElements();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [isProcessingPayment, setIsProcessingPayment] = useState(false);
     const [nameOnCard, setNameOnCard] = useState('');
 
@@ -51,6 +56,8 @@ const PaymentForm = () => {
         } else {
             if(paymentResult.paymentIntent.status === 'succeeded'){
                 alert('Payment was successful!');
+                dispatch(clearCartItems());
+                navigate('/order-confirmation');
             }
         }
     };
