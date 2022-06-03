@@ -9,7 +9,8 @@ import { BUTTON_TYPE_CLASSES } from "../button/button.component";
 import { clearCartItems } from "../../store/cart/cart.action";
 import { useDispatch } from "react-redux";
 
-import { PaymentFormContainer, FormContainer, PaymentButton } from './payment-form.styles'
+import { PaymentFormContainer, FormContainer, PaymentButton } from './payment-form.styles';
+import ShippingForm from '../../components/shipping-form/shipping-form.component.jsx';
 
 const PaymentForm = () => {
     const stripe = useStripe();
@@ -70,6 +71,8 @@ const PaymentForm = () => {
     return (
         <PaymentFormContainer>
             <FormContainer onSubmit={paymentHandler}>
+                <h2> Shipping information</h2>
+                <ShippingForm />
                 <h2>Credit Card Payment</h2>
                 <FormInput required label="Name on card" type="text" onChange={changeHandler} name="nameOnCard" value={nameOnCard}/>
                 <CardElement />
