@@ -71,9 +71,6 @@ const PaymentForm = () => {
     return (
         <PaymentFormContainer>
             <FormContainer onSubmit={paymentHandler}>
-                <h2> Shipping information</h2>
-                <ShippingForm />
-                <h2>Credit Card Payment</h2>
                 <FormInput required label="Name on card" type="text" onChange={changeHandler} name="nameOnCard" value={nameOnCard}/>
                 <CardElement />
                 <PaymentButton isLoading={isProcessingPayment} buttonType={BUTTON_TYPE_CLASSES.inverted}> Pay now </PaymentButton>

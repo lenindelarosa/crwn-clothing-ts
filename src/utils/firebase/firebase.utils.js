@@ -18,6 +18,7 @@ import {
   writeBatch,
   query,
   getDocs,
+  updateDoc
 } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -71,6 +72,16 @@ const firebaseConfig = {
     const querySnapshot = await getDocs(q);
     return querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
   };
+
+  export const createUserAdress = async (
+    user,
+    shipping_address
+  ) => {
+    const userDocRef = doc(db, 'users', user.id);
+    console.log(userDocRef);
+    console.log(shipping_address);
+    await updateDoc(userDocRef, {shipping_address});
+  }
   
   export const createUserDocumentFromAuth = async (
     userAuth,
@@ -100,6 +111,8 @@ const firebaseConfig = {
   
     return userSnapshot;
   };
+
+  
   
   export const createAuthUserWithEmailAndPassword = async (email, password) => {
     if (!email || !password) return;
