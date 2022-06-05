@@ -3,11 +3,6 @@ import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
 
-
-const mainColor = 'black';
-const subColor = 'grey';
-
-
 export const ShippingFormContainer = styled.form`
     display: flex;
     width: 100%;

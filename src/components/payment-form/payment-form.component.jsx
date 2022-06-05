@@ -10,7 +10,6 @@ import { clearCartItems } from "../../store/cart/cart.action";
 import { useDispatch } from "react-redux";
 
 import { PaymentFormContainer, FormContainer, PaymentButton } from './payment-form.styles';
-import ShippingForm from '../../components/shipping-form/shipping-form.component.jsx';
 
 const PaymentForm = () => {
     const stripe = useStripe();
