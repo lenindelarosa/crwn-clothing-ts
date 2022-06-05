@@ -22,7 +22,7 @@ const SignInForm = () => {
 
     useEffect(() => {
         if(currentUser){
-            navigate('/shop');
+            navigate('/');
         }
       }, [currentUser, navigate]);
     

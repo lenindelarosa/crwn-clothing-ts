@@ -78,8 +78,6 @@ const firebaseConfig = {
     shipping_address
   ) => {
     const userDocRef = doc(db, 'users', user.id);
-    console.log(userDocRef);
-    console.log(shipping_address);
     await updateDoc(userDocRef, {shipping_address});
   }
   
