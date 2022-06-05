@@ -11,8 +11,11 @@ import {
     CountrySelectorContainer, 
     AddressContainer,
     CustomFormInput,
-    ValidateAddressButton
- } from './shipping-form.styles'
+    ValidateAddressButton,
+    ZipCodeAndNumberContainer
+ } from './shipping-form.styles';
+
+ import PaymentForm from '../payment-form/payment-form.component';
 
 const defaultShippingAddress = {
     country: '',
@@ -59,6 +62,8 @@ const ShippingForm = () => {
     return(
         <ShippingFormContainer onSubmit={submitAddressHandler}>
             <CountrySelectorContainer>
+                <h3>Country:</h3>
+                <h3>Region:</h3>
                 <CustomCountryDropdown
                     name="country"
                     value={country}
@@ -73,13 +78,18 @@ const ShippingForm = () => {
                     disabled={isAddressValidated} />
             </CountrySelectorContainer>
             <AddressContainer>
-                <FormInput disabled={isAddressValidated} required groupMargin={'0 px'} label="Full name" type="text" onChange={onChangeHandler} name="fullName" value={fullName}/>
-                <FormInput disabled={isAddressValidated} required groupMargin={'0 px'} label="Street address" type="text" onChange={onChangeHandler} name="streetAddress" value={streetAddress}/>
-                <FormInput disabled={isAddressValidated} required groupMargin={'0 px'} label="City name" type="text" onChange={onChangeHandler} name="cityName" value={cityName}/>
-                <CustomFormInput disabled={isAddressValidated} required groupMargin={'0 px'} label="Zip code" type="number" onChange={onChangeHandler} name="zipCode" value={zipCode}/>
-                <CustomFormInput disabled={isAddressValidated} required groupMargin={'0 px'} label="Phone number" type="number" onChange={onChangeHandler} name="phoneNumber" value={phoneNumber}/>
-            </AddressContainer>
-            <ValidateAddressButton disabled={isAddressValidated} buttonType={BUTTON_TYPE_CLASSES.inverted}> Validate address </ValidateAddressButton>
+                <FormInput disabled={isAddressValidated} groupStyle={{ margin: 0}} required label="Full name" type="text" onChange={onChangeHandler} name="fullName" value={fullName}/>
+                <FormInput disabled={isAddressValidated} groupStyle={{ margin: 0}} required label="Street address" type="text" onChange={onChangeHandler} name="streetAddress" value={streetAddress}/>
+                <FormInput disabled={isAddressValidated} groupStyle={{ margin: 0}}  required label="City name" type="text" onChange={onChangeHandler} name="cityName" value={cityName}/>
+                <ZipCodeAndNumberContainer>
+                    <CustomFormInput disabled={isAddressValidated} required groupStyle={{ margin: 0}}  label="Zip code" type="number" onChange={onChangeHandler} name="zipCode" value={zipCode}/>
+                    <CustomFormInput disabled={isAddressValidated} required groupStyle={{ margin: 0}}  label="Phone number" type="number" onChange={onChangeHandler} name="phoneNumber" value={phoneNumber}/>
+                </ZipCodeAndNumberContainer>
+                </AddressContainer>
+            <ValidateAddressButton disabled={isAddressValidated} buttonType={BUTTON_TYPE_CLASSES.inverted}> {(!isAddressValidated)?'Next -> Payment details': 'Continue with payment.'} </ValidateAddressButton>
+            {
+                isAddressValidated ? <PaymentForm /> : null
+            }
         </ShippingFormContainer>
     )
 };

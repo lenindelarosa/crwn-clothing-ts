@@ -1,8 +1,8 @@
 import { FormInputLabel, Input, Group } from './form-input.styles'
 
-const FormInput = ({ label, groupMargin, ...otherProps }) => {
+const FormInput = ({ label, groupStyle, ...otherProps }) => {
     return (
-        <Group style={{margin: groupMargin}}>
+        <Group style={groupStyle}>
             <Input {...otherProps}/>
             {label && (
                 <FormInputLabel shrink={otherProps.value.length}>

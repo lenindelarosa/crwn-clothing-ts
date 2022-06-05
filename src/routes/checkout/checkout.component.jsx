@@ -36,9 +36,7 @@ const Checkout = () => {
                 ))}
             <Total>TOTAL: ${cartTotal}</Total>
             <h2> Shipping information</h2>
-                <ShippingForm />
-            <h2>Credit Card Payment</h2>
-            <PaymentForm />
+            <ShippingForm />
         </CheckoutContainer>
     );
 };

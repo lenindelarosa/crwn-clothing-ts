@@ -70,6 +70,7 @@ const PaymentForm = () => {
 
     return (
         <PaymentFormContainer>
+            <h2>Credit Card Payment</h2>
             <FormContainer onSubmit={paymentHandler}>
                 <FormInput required label="Name on card" type="text" onChange={changeHandler} name="nameOnCard" value={nameOnCard}/>
                 <CardElement />
