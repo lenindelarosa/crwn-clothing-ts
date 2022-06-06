@@ -15,7 +15,7 @@ export const ImageContainer = styled.div`
   padding-right: 15px;
 
   img {
-    width: 100%;
+    width: 50%;
     height: 100%;
   }  
 `;

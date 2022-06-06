@@ -8,6 +8,7 @@ export const ShippingFormContainer = styled.form`
     width: 100%;
     flex-direction: column;
     margin: 50px auto 0;
+    font-size: min(max(10px, 2.0vw), 18px);
 `;
 
 export const CountrySelectorContainer = styled.div`
@@ -57,10 +58,11 @@ export const CustomFormInput = styled(FormInput)`
 `;
 
 export const ValidateAddressButton = styled(Button)`
+    font-size: min(max(10px, 2.0vw), 18px);
     :disabled,
     [disabled]{
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
-}
+        border: 1px solid #999999;
+        background-color: #cccccc;
+        color: #666666;
+    }
 `;

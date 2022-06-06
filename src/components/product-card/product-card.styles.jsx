@@ -42,6 +42,7 @@ export const FooterContainer = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 18px;
+  font-size: min(max(10px, 2.0vw), 18px);
 `;  
 
 export const Name = styled.span`
