@@ -16,11 +16,12 @@ export const ProductCardContainer = styled.div`
   }
 
   button {
-    width: 80%;
+    width: 90%;
     opacity: 0.7;
     position: absolute;
-    top: 255px;
+    top: 29vh;
     display: none;
+    //font-size: min(max(12px, 2vw), 18px);
   }
 
   &:hover {
@@ -31,7 +32,8 @@ export const ProductCardContainer = styled.div`
     button {
       opacity: 0.85;
       display: flex;
-      font-size: min(max(10px, 1vw), 12px);
+      width: 100%;
+      font-size: min(max(12px, 0.8vw), 18px);
     }
   }
   `;

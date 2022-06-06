@@ -17,7 +17,7 @@ export const PaymentFormContainer = styled.div`
 `;
 
 export const FormContainer = styled.form`
-    width: 100%;
+    width: 80%;
     justify-content: center;
     height: 100px;
     margin: 10px 10px;
