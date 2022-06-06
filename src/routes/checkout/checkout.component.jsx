@@ -13,7 +13,8 @@ const Checkout = () => {
 
     return(
         <CheckoutContainer>
-            <CheckoutHeader>
+            { cartItems.length ? (
+                <CheckoutHeader>
                 <HeaderBlock>
                     <span>Product</span>
                 </HeaderBlock>
@@ -29,7 +30,8 @@ const Checkout = () => {
                 <HeaderBlock>
                     <span>Remove</span>
                 </HeaderBlock>
-            </CheckoutHeader>                
+            </CheckoutHeader>             
+            ) : (<h3> Your cart is empty.</h3>)}
                 {cartItems.map((item) => (
                     <CheckoutItem key={item.id} cartItem={item}/>
                 ))}

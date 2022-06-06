@@ -19,7 +19,7 @@ export const ProductCardContainer = styled.div`
     width: 90%;
     opacity: 0.7;
     position: absolute;
-    top: 29vh;
+    top: 255px;
     display: none;
     //font-size: min(max(12px, 2vw), 18px);
   }
