@@ -31,6 +31,7 @@ export const ProductCardContainer = styled.div`
     button {
       opacity: 0.85;
       display: flex;
+      font-size: min(max(10px, 1vw), 12px);
     }
   }
   `;
@@ -41,8 +42,6 @@ export const FooterContainer = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 18px;
-
-
 `;  
 
 export const Name = styled.span`

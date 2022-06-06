@@ -23,14 +23,15 @@ export const Body = styled.div`
   h2 {
     font-weight: bold;
     margin: 0 6px 0;
-    font-size: 22px;
+    font-size: min(max(15px, 2vw), 20px);
     color: #4a4a4a;
     text-transform: uppercase;
   }
 
   p {
     font-weight: lighter;
-    font-size: 16px;
+    font-size: 1.5vw;
+    font-size: min(max(15px, 2vw), 20px);
   }
 `;
 

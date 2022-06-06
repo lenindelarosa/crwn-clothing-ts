@@ -21,6 +21,7 @@ export const CheckoutHeader = styled.div`
 export const HeaderBlock = styled.div`
   text-transform: capitalize;
   width: 23%;
+  font-size: min(max(10px, 1.8vw), 22px);
 
   &:last-child {
     width: 8%;

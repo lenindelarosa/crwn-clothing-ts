@@ -22,15 +22,19 @@ export const ImageContainer = styled.div`
 
 export const BaseSpan = styled.span`
   width: 23%;
+  //font-size: min(max(15px, 1.5vw), 20px);
+  font-size: min(max(10px, 2.0vw), 18px);
 `
 
 export const Quantity = styled.span`
   display: flex;
   width: 23%;
+  font-size: min(max(15px, 1.5vw), 20px);
 `;
 
 export const Arrow = styled.span`
   cursor: pointer;
+  font-size: min(max(12px, 1.5vw), 20px);
 `;
 
 export const Value = styled.span`
