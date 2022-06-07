@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const CheckoutContainer = styled.div`
-  width: 75%;
+  width: 50%;
   min-height: 50vh;
   display: flex;
   flex-direction: column;

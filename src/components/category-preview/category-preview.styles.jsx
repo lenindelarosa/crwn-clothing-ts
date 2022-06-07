@@ -13,7 +13,8 @@ export const Title = styled.span`
 
 export const Preview = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));//
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   column-gap: 20px;  
   row-gap: 10px;
+  min-width: 400px;
 `;
