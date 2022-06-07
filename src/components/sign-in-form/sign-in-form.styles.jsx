@@ -24,7 +24,7 @@ export const SignInContainer = styled.div`
 
 export const ButtonsContainer = styled.div`
   display: grid;
-  grid-template-columns: 30% auto;
+  grid-template-columns: 35% auto;
   justify-content: space-between;
 
 
