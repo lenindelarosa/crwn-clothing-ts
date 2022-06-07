@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const SignUpContainer = styled.div`
     display: flex;
     flex-direction: column;
+    margin-left: 10px;
+    width: 30vw;
     
     @media only screen 
     and (min-device-width : 200px) 
@@ -16,6 +18,6 @@ export const SignUpContainer = styled.div`
     }
 
     span {
-        font-size: min(max(12px, 2vw), 22px);
+        font-size: min(max(8px, 2vw), 22px);
     }
 `;

@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const SignInContainer = styled.div`
     display: flex;
     flex-direction: column;
-    //width: 45%;  
+    margin-right: 10px;
+    width: 30vw;
 
     @media only screen 
     and (min-device-width : 200px) 
@@ -25,8 +26,14 @@ export const ButtonsContainer = styled.div`
   display: flex;
   justify-content: space-between;
 
+  @media only screen 
+    and (min-device-width : 200px) 
+    and (max-device-width : 480px) {
+      width: 100%;
+    }
+
   button {
-    font-size: min(max(8px, 2vw), 16px);
+    display: inline-block;
   }
   
 `;
