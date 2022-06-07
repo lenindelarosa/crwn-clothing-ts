@@ -5,7 +5,7 @@ import Button from '../button/button.component';
 
 export const ShippingFormContainer = styled.form`
     display: flex;
-    width: 60%;
+    width: 70%;
     flex-direction: column;
     margin: 50px auto 0;
     font-size: min(max(10px, 2.0vw), 18px);
@@ -20,7 +20,6 @@ export const CountrySelectorContainer = styled.div`
 `;
 
 export const ZipCodeAndNumberContainer = styled.div`
-    width: 100%;
     display: grid;
     grid-template-columns: 45% 45%;
     grid-gap: 10% ;
