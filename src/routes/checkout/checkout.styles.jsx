@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const CheckoutContainer = styled.div`
   width: 70%;
   min-height: 50vh;
@@ -8,10 +9,19 @@ export const CheckoutContainer = styled.div`
   align-items: center;
   margin: 50px auto 0;
 
+  @media only screen 
+  and (min-device-width : 200px) 
+  and (max-device-width : 480px) {
+    width: 90%;
+  }
+
   h2 {
     font-size: min(max(20px, 2.5vw), 36px);
   }
 `;
+
+/* Smartphones (portrait and landscape) ----------- */
+
 
 export const CheckoutHeader = styled.div`
   width: 100%;
