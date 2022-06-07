@@ -9,6 +9,12 @@ export const ShippingFormContainer = styled.form`
     flex-direction: column;
     margin: 50px auto 0;
     font-size: min(max(10px, 2.0vw), 18px);
+
+    @media only screen 
+    and (min-device-width : 200px) 
+    and (max-device-width : 480px) {
+        width: 90%;
+  }
 `;
 
 export const CountrySelectorContainer = styled.div`

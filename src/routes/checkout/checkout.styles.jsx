@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 
+
 export const CheckoutContainer = styled.div`
   width: 70%;
   min-height: 50vh;

@@ -11,6 +11,12 @@ export const PaymentFormContainer = styled.div`
     margin: 10px 30px;
     min-width: 400px;
 
+    @media only screen 
+    and (min-device-width : 200px) 
+    and (max-device-width : 480px) {
+    width: 90%;
+  }
+
   h2 {
     font-size: min(max(20px, 2.5vw), 36px);
   }
