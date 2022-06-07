@@ -33,7 +33,7 @@ export const ProductCardContainer = styled.div`
       opacity: 0.85;
       display: flex;
       width: 100%;
-      font-size: min(max(12px, 0.8vw), 18px);
+      font-size: min(max(10px, 0.8vw), 18px);
     }
   }
   `;
