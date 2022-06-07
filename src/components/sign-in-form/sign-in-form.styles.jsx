@@ -8,7 +8,7 @@ export const SignInContainer = styled.div`
 
     @media only screen 
     and (min-device-width : 200px) 
-    and (max-device-width : 480px) {
+    and (max-device-width : 780px) {
       width: 90%;
     }
 
@@ -23,17 +23,14 @@ export const SignInContainer = styled.div`
 `;
 
 export const ButtonsContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 30% auto;
   justify-content: space-between;
 
-  @media only screen 
-    and (min-device-width : 200px) 
-    and (max-device-width : 480px) {
-      width: 100%;
-    }
 
   button {
     display: inline-block;
+    font-size: min(max(10px, 2vw), 16px);
   }
   
 `;

@@ -8,7 +8,7 @@ export const SignUpContainer = styled.div`
     
     @media only screen 
     and (min-device-width : 200px) 
-    and (max-device-width : 480px) {
+    and (max-device-width : 780px) {
       width: 90%;
     }
 
