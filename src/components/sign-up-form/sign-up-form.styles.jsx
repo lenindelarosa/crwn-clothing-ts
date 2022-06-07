@@ -18,6 +18,6 @@ export const SignUpContainer = styled.div`
     }
 
     span {
-        font-size: min(max(8px, 2vw), 22px);
+        font-size: min(max(14px, 2vw), 22px);
     }
 `;

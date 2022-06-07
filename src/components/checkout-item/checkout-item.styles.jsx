@@ -15,7 +15,7 @@ export const ImageContainer = styled.div`
   padding-right: 15px;
 
   img {
-    width: 75%;
+    width: 95%;
     height: 100%;
   }  
 `;
@@ -29,12 +29,12 @@ export const BaseSpan = styled.span`
 export const Quantity = styled.span`
   display: flex;
   width: 23%;
-  font-size: min(max(15px, 1.5vw), 20px);
+  font-size: min(max(10px, 2.0vw), 18px);
 `;
 
 export const Arrow = styled.span`
   cursor: pointer;
-  font-size: min(max(12px, 1.5vw), 20px);
+  font-size: min(max(10px, 2.0vw), 18px);
 `;
 
 export const Value = styled.span`
