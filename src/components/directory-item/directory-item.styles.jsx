@@ -23,7 +23,7 @@ export const Body = styled.div`
   h2 {
     font-weight: bold;
     margin: 0 6px 0;
-    font-size: min(max(15px, 2vw), 20px);
+    font-size: min(max(13px, 2vw), 20px);
     color: #4a4a4a;
     text-transform: uppercase;
   }
@@ -31,7 +31,7 @@ export const Body = styled.div`
   p {
     font-weight: lighter;
     font-size: 1.5vw;
-    font-size: min(max(15px, 2vw), 20px);
+    font-size: min(max(13px, 2vw), 20px);
   }
 `;
 
