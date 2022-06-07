@@ -16,4 +16,10 @@ export const Preview = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   column-gap: 20px;  
   row-gap: 10px;
+
+  @media only screen 
+    and (min-device-width : 200px) 
+    and (max-device-width : 780px) {
+      width: 100%;
+    }
 `;
