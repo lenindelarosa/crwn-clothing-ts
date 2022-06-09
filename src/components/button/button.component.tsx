@@ -14,8 +14,15 @@ const getButton = (buttonType = BUTTON_TYPE_CLASSES.base) => (
     }[buttonType]
 )
 
+type ButtonProps = {
+    children: string;
+    buttonType: string;
+    isLoading?: string;
+    onClick: () => void;
+    otherProps?: [];
+}
 
-const Button = ({ children, buttonType, isLoading, ...otherProps }) => {
+const Button = ({ children, buttonType, isLoading, ...otherProps }: ButtonProps) => {
     const CustomButton = getButton(buttonType);
     return (
         <CustomButton disabled={isLoading}{...otherProps} >

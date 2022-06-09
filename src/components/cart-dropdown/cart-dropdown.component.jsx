@@ -6,9 +6,16 @@ import { useSelector, useDispatch } from 'react-redux'
 import { setIsCartOpen } from "../../store/cart/cart.action";
 import { CartDropdownContainer, CartItems, EmtpyMessage } from './cart-dropdown.styles'
 
-
 const CartDropdown = () => {
     const dispatch = useDispatch();
+
+    // type cartItem = {
+    //     id: number;
+    //     name: string;
+    //     quantity: number;
+    //     imageUrl: string;
+    //     price: number;
+    // }
 
     const cartItems = useSelector(selectCartItems);
     const navigate = useNavigate();
