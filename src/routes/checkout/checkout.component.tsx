@@ -1,8 +1,8 @@
-import { CheckoutContainer, CheckoutHeader, HeaderBlock, Total } from './checkout.styles.jsx';
+import { CheckoutContainer, CheckoutHeader, HeaderBlock, Total } from './checkout.styles';
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 import { useSelector } from 'react-redux';
 import { selectCartTotal, selectCartItems } from '../../store/cart/cart.selector';
-import ShippingForm from '../../components/shipping-form/shipping-form.component.jsx';
+import ShippingForm from '../../components/shipping-form/shipping-form.component';
 
 
 const Checkout = () => {

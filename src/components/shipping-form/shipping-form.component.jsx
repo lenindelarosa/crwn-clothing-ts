@@ -37,6 +37,7 @@ const ShippingForm = () => {
     const { country, region, fullName, streetAddress, cityName, zipCode, phoneNumber } = shippingAddress;
     const currentUser = useSelector(selectCurrentUser);
 
+
     const onChangeHandler = (event) => {
         const { name, value } = event.target;
         setShippingAddress({ ...shippingAddress, [name]: value});
@@ -52,6 +53,7 @@ const ShippingForm = () => {
 
     const submitAddressHandler = async (event) => {
         event.preventDefault();
+        if (currentUser === null) return;
         try {
             await createUserAdress(currentUser, shippingAddress);
             setIsAddressValidated(true);
