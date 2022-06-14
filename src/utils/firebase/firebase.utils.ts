@@ -104,10 +104,10 @@ const firebaseConfig = {
   export const createUserAdress = async (
     user: User,
     shipping_address: ShippingAddress
-  ) => {
-    const userDocRef = doc(db, 'users', user.uid);
-    await updateDoc(userDocRef, {shipping_address});
-  }
+    ) => {
+      const userDocRef = doc(db, 'users', user.uid);
+      await updateDoc(userDocRef, {shipping_address});
+    };
   
   export const createUserDocumentFromAuth = async (
     userAuth: User,

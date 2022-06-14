@@ -40,12 +40,12 @@ const removeCartItem = (cartItems: CartItem[], productToRemove: CartItem):CartIt
 
 export type SetCartItems = ActionWithPayload<CART_ACTION_TYPES.SET_CART_ITEMS, CartItem[]>;
 
-export type SetCartIsOpen = ActionWithPayload<CART_ACTION_TYPES.TOOGLE_CART_OPEN, boolean>;
+export type SetCartIsOpen = ActionWithPayload<CART_ACTION_TYPES.SET_IS_CART_OPEN, boolean>;
 
 export type ClearCartItems = Action<CART_ACTION_TYPES.CLEAR_CART_ITEMS>;
 
 export const setIsCartOpen = withMatcher((boolean: boolean): SetCartIsOpen =>
-    createAction(CART_ACTION_TYPES.TOOGLE_CART_OPEN, boolean)
+    createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, boolean)
 );
 
 export const setCartItems = withMatcher((cartItems: CartItem[]): SetCartItems =>

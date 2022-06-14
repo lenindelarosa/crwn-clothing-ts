@@ -17,8 +17,8 @@ declare global {
 }
 
 type ExtendedPersistConfig = PersistConfig<RootState> & {
-  whitelist: (keyof RootState)[]
-}
+  whitelist: (keyof RootState)[];
+};
 
 const persistConfig: ExtendedPersistConfig = {
   key: 'root',
