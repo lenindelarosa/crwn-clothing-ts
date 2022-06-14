@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, FormEvent, ChangeEvent } from "react";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 import FormInput from "../form-input/form-input.component";
-import { SignInContainer, ButtonsContainer } from './sign-in-form.styles.jsx'
+import { SignInContainer, ButtonsContainer } from './sign-in-form.styles'
 import { useNavigate } from 'react-router-dom'
 import { emailSignInStart, googleSignInStart } from "../../store/user/user.action";
 import { useDispatch, useSelector } from 'react-redux';
@@ -26,7 +26,7 @@ const SignInForm = () => {
         }
       }, [currentUser, navigate]);
     
-    const submitHandler = async (event) => {
+    const submitHandler = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
         try {
             dispatch(emailSignInStart(email, password));
@@ -35,7 +35,7 @@ const SignInForm = () => {
         }
     };
 
-    const onChangeHandler = (event) => {
+    const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
         setFormFields({ ...formFields, [name]: value});
     };
