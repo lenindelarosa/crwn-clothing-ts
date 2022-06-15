@@ -9,14 +9,6 @@ import { CartDropdownContainer, CartItems, EmtpyMessage } from './cart-dropdown.
 const CartDropdown = () => {
     const dispatch = useDispatch();
 
-    // type cartItem = {
-    //     id: number;
-    //     name: string;
-    //     quantity: number;
-    //     imageUrl: string;
-    //     price: number;
-    // }
-
     const cartItems = useSelector(selectCartItems);
     const navigate = useNavigate();
     const goToCheckoutHandler = () => {
